@@ -1,0 +1,118 @@
+/*
+Theme Name: Maglux
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+https://codex.wordpress.org/Right-to-Left_Language_Support
+*/
+body {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+.navbar-controls {
+    margin-left: -1.25rem;
+    margin-right: 1.25rem;
+}
+
+@media (min-width: 700px) {
+    .navbar-controls {
+        margin-left: -2rem;
+        margin-right: 2rem;
+    }
+}
+
+
+.main-navigation .svg-icon {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+@media screen and (min-width: 992px) {
+    .main-navigation div.menu ul ul li {
+        text-align: right;
+    }
+
+    .main-navigation div.menu > ul > li > ul {
+        right: 0;
+        left: inherit;
+    }
+
+    .main-navigation div.menu > ul > li:last-child > ul ul,
+    .main-navigation div.menu > ul > li:nth-last-child(2) ul ul,
+    .main-navigation div.menu > ul > li:nth-last-child(3) ul ul {
+        right: inherit;
+        left: 100%;
+    }
+
+    .main-navigation div.menu ul ul ul {
+        right: 100%;
+        left: inherit;
+    }
+}
+
+.site-navigation .primary-menu li ul {
+    left: inherit;
+    right: -99999rem;
+}
+.site-navigation .primary-menu li.menu-item-has-children:hover > ul,
+.site-navigation .primary-menu li.menu-item-has-children:focus > ul,
+.site-navigation .primary-menu li.page_item_has_children:hover > ul,
+.site-navigation .primary-menu li.page_item_has_children:focus > ul {
+    left: inherit;
+    right: 0;
+}
+.post-navigation .arrow {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.block-title-wrapper .block-title {
+    float: right;
+}
+
+.block-title-wrapper:before,
+.comment-reply-title:before {
+    right: 0;
+    left: inherit;
+}
+
+.entry-meta .entry-meta-item {
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+.entry-meta-item .entry-meta-icon {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+.left-sidebar .widget-area {
+    padding-left: 30px;
+    padding-right: 5px;
+}
+
+.right-sidebar .widget-area {
+    padding-left: 5px;
+    padding-right: 30px;
+}
+
+.post-navigation .arrow {
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+.post-navigation .nav-next .arrow {
+    margin-right: 2rem;
+    margin-left: 0;
+}
+
+.header-searchbar #search-closer {
+    right: inherit;
+    left: 0;
+}
+
+.search-form label,
+.search-form .search-submit {
+    float: right;
+}

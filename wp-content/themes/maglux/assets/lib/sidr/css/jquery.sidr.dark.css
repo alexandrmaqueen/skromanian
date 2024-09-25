@@ -1,0 +1,112 @@
+.sidr {
+    background-color: #f5f5f5;
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 9999;
+    width: 320px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.sidr.right {
+    left: auto;
+    right: -320px;
+}
+.sidr.left {
+    left: -320px;
+    right: auto;
+}
+@media (min-width: 576px) {
+    .sidr {
+        width: 380px;
+    }
+    .sidr.right {
+        right: -380px;
+    }
+    .sidr.left {
+        left: -380px;
+    }
+}
+.sidr {
+    padding: 20px;
+}
+.admin-bar .sidr {
+    padding-top: 40px;
+}
+.icon-sidr {
+    position: relative;
+    margin-right: 2rem;
+}
+.rtl .icon-sidr {
+    margin-left: 2rem;
+    margin-right: 0;
+}
+/* Hamburger 1 */
+#widgets-nav #hamburger-one {
+    background: none;
+    border: none;
+    margin:0;
+    padding: 0;
+}
+#hamburger-one .hamburger-wrapper{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+#hamburger-one .hamburger-inner,
+#hamburger-one .hamburger-inner:after,
+#hamburger-one .hamburger-inner:before {
+    background-color: #fff;
+    width: 28px;
+    height: 1.5px;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    transition-property: transform;
+    transition-duration: .15s;
+    transition-timing-function: ease;
+}
+#hamburger-one .hamburger-inner {
+    display: block;
+    top: 50%;
+    transition-duration: 75ms;
+    transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+}
+#hamburger-one .hamburger-inner:after,
+#hamburger-one .hamburger-inner:before {
+    content: "";
+    display: block;
+}
+#hamburger-one .hamburger-inner:before {
+    top: -7px;
+    transition: top 75ms ease .12s, opacity 75ms ease;
+}
+#hamburger-one .hamburger-inner:after {
+    bottom: -7px;
+    transition: bottom 75ms ease .12s, transform 75ms cubic-bezier(.55, .055, .675, .19);
+}
+#hamburger-one.active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: .12s;
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+}
+#hamburger-one.active .hamburger-inner:before {
+    top: 0;
+    opacity: 0;
+    transition: top 75ms ease, opacity 75ms ease .12s;
+}
+#hamburger-one.active .hamburger-inner:after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 75ms ease, transform 75ms cubic-bezier(.215, .61, .355, 1) .12s;
+}
+.sidr-offcanvas-close {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+}
